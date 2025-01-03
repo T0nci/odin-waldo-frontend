@@ -1,11 +1,11 @@
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
-import App from "./App";
+import Nav from "./Components/Nav/Nav";
 
 const routes = [
   {
     path: "/",
     errorElement: <ErrorPage />,
-    element: <App />,
+    element: <Nav />,
   },
 ];
 

@@ -1,0 +1,33 @@
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container > :last-child {
+  margin-top: auto;
+}
+
+.nav {
+  background-color: var(--nav-footer-background-color, #e2e2e2);
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #000000;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 100ms ease-in-out;
+}
+
+.nav-link:hover {
+  border-bottom-color: #000000;
+}
