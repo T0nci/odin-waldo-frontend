@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Map.module.css";
+import Dropdown from "../Dropdown/Dropdown";
 
 const Map = () => {
   const [dropdown, setDropdown] = useState({
@@ -29,13 +30,12 @@ const Map = () => {
           onClick={handleClick}
         />
         {dropdown.active && (
-          <ul
-            className={styles.dropdown}
+          <Dropdown
             style={{
               top: dropdown.coordinates[1],
               left: dropdown.coordinates[0],
             }}
-          ></ul>
+          />
         )}
       </div>
     </>
