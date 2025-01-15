@@ -5,17 +5,16 @@ const Map = () => {
   const [dropdown, setDropdown] = useState({
     active: false,
     coordinates: [],
-    dropdownCoordinates: [],
   });
 
   const handleClick = (e) => {
-    if (dropdown.active)
-      setDropdown({ active: false, coordinates: [], dropdownCoordinates: [] });
+    if (dropdown.active) setDropdown({ active: false, coordinates: [] });
     else {
       console.log(`Offset: ${e.nativeEvent.offsetX}, ${e.nativeEvent.offsetY}`);
 
       setDropdown({
         active: true,
+        // these coordinates are relative to the element being clicked on, and since we are loading the full image these are accurate
         coordinates: [e.nativeEvent.offsetX, e.nativeEvent.offsetY],
       });
     }
@@ -23,20 +22,20 @@ const Map = () => {
 
   return (
     <>
-      <div className={styles.map} onClick={handleClick}>
+      <div className={styles.map}>
         <img
-          src="https://res-console.cloudinary.com/dyi9mrxgm/thumbnails/v1/image/upload/v1731330901/Y2xkLXNhbXBsZS0z/drilldown"
+          src="https://res.cloudinary.com/dyi9mrxgm/image/upload/v1736456545/terraria-map-1_fdytsc.jpg"
           alt="..."
+          onClick={handleClick}
         />
         {dropdown.active && (
-          <div
+          <ul
             className={styles.dropdown}
             style={{
-              // using these coords because we want the dropdown to follow where the user clicked(these are relative to parent container)
               top: dropdown.coordinates[1],
               left: dropdown.coordinates[0],
             }}
-          ></div>
+          ></ul>
         )}
       </div>
     </>
