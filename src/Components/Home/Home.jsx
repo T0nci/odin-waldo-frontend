@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <>
       {error ? (
-        <p>{`${error}`}</p>
+        <p className={styles.error}>{`${error}`}</p>
       ) : loading ? (
         <Loading />
       ) : (

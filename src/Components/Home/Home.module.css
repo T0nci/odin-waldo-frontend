@@ -19,3 +19,9 @@
 .play:active {
   background-color: #1a6e2d;
 }
+
+.error {
+  color: red;
+  font-size: 1.75rem;
+  text-align: center;
+}
