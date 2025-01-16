@@ -3,6 +3,7 @@ import { useData } from "../../hooks";
 import { useNavigate } from "react-router";
 import styles from "./Home.module.css";
 import MapList from "../partials/MapList/MapList";
+import Loading from "../partials/Loading/Loading";
 
 const Home = () => {
   const [maps, loading, error] = useData(
@@ -24,15 +25,7 @@ const Home = () => {
       {error ? (
         <p>{`${error}`}</p>
       ) : loading ? (
-        <div className="loading">
-          <div className="box">
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-          </div>
-          Loading
-        </div>
+        <Loading />
       ) : (
         <>
           <MapList
