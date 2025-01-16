@@ -1,0 +1,21 @@
+.play {
+  margin: 1rem auto 0;
+  display: block;
+
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.play:hover {
+  background-color: #1f8838;
+}
+
+.play:active {
+  background-color: #1a6e2d;
+}
