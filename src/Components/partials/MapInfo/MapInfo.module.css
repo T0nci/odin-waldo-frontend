@@ -1,0 +1,27 @@
+.map {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.character {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.image {
+  height: 50px;
+  width: auto;
+}
+
+.name {
+  font-size: 1.25rem;
+}
