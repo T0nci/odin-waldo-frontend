@@ -1,7 +1,7 @@
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import Nav from "./Components/Nav/Nav";
 import Home from "./Components/Home/Home";
-import Map from "./Components/partials/Map/Map";
+import Play from "./Components/Play/Play";
 
 const routes = [
   {
@@ -10,7 +10,7 @@ const routes = [
     element: <Nav />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/map", element: <Map /> },
+      { path: "/play/:mapId", element: <Play /> },
     ],
   },
 ];
