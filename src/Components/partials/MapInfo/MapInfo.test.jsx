@@ -119,6 +119,7 @@ describe("MapInfo Component", () => {
           </ul>
           <p
             class="_result_59a237"
+            data-testid="result"
           >
             Test
           </p>
