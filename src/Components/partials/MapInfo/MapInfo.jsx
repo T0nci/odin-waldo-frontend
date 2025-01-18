@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./MapInfo.module.css";
 
-const MapInfo = ({ mapInfo }) => {
+const MapInfo = ({ mapInfo, guessResult }) => {
   return (
     <div>
       <p className={styles.map}>Map: {mapInfo.name}</p>
@@ -13,6 +13,7 @@ const MapInfo = ({ mapInfo }) => {
           </li>
         ))}
       </ul>
+      {guessResult && <p className={styles.result}>{guessResult}</p>}
     </div>
   );
 };
@@ -29,6 +30,7 @@ MapInfo.propTypes = {
       }),
     ),
   }).isRequired,
+  guessResult: PropTypes.string.isRequired,
 };
 
 export default MapInfo;
