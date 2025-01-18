@@ -1,8 +1,35 @@
 .dropdown {
   position: absolute;
 
-  padding: 1rem;
   border: 1px solid #000000;
   border-radius: 5px;
-  background-color: var(--nav-footer-background-color);
+  background-color: var(--nav-footer-background-color, lightgray);
+}
+
+.character {
+  padding: 0.5rem;
+
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  width: 100%;
+
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+.character:hover {
+  background-color: #a5a5a5;
+  cursor: pointer;
+}
+
+.image {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+}
+
+.name {
+  width: max-content;
 }
