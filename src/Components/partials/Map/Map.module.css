@@ -4,7 +4,11 @@
   max-width: min-content;
   margin: 0 auto;
 
-  border: 1px solid black;
   height: 500px;
   overflow: auto;
+  scrollbar-width: thin;
+}
+
+.map:hover {
+  cursor: crosshair;
 }
