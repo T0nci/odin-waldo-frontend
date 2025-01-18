@@ -71,7 +71,7 @@ describe("Map Component", () => {
     );
     const user = userEvent.setup();
 
-    await user.click(screen.getByRole("img"));
+    await user.click(screen.getByAltText("map"));
 
     expect(container).toMatchInlineSnapshot(`
       <div>
@@ -140,7 +140,7 @@ describe("Map Component", () => {
     );
     const user = userEvent.setup();
 
-    await user.click(screen.getByRole("img"));
+    await user.click(screen.getByAltText("map"));
     await user.click(screen.getAllByRole("button")[0]);
 
     expect(guessCharacter).toHaveBeenCalledWith(1);
@@ -161,7 +161,7 @@ describe("Map Component", () => {
     );
     const user = userEvent.setup();
 
-    await user.click(screen.getByRole("img"));
+    await user.click(screen.getByAltText("map"));
     await user.click(screen.getAllByRole("button")[0]);
 
     expect(hoisted.navigate).toHaveBeenCalledWith("/name");
