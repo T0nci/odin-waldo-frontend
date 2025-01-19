@@ -13,7 +13,11 @@ const MapInfo = ({ mapInfo, guessResult }) => {
           </li>
         ))}
       </ul>
-      {guessResult && <p className={styles.result} data-testid="result">{guessResult}</p>}
+      {guessResult && (
+        <p className={styles.result} data-testid="result">
+          {guessResult}
+        </p>
+      )}
     </div>
   );
 };

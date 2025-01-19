@@ -8,7 +8,7 @@ export const useData = (url, credentials = false) => {
   useEffect(() => {
     let isActive = true;
 
-    fetch(url, credentials ? {credentials: "include"} : {})
+    fetch(url, credentials ? { credentials: "include" } : {})
       .then((res) => res.json())
       .then((res) => {
         if (!isActive) return;

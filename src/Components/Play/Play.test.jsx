@@ -17,8 +17,8 @@ const setupRouter = () => {
       },
       {
         path: "/name",
-        element: <PlaceHolder />
-      }
+        element: <PlaceHolder />,
+      },
     ],
     { initialEntries: ["/play/1"], initialIndex: 0 },
   );
@@ -52,7 +52,7 @@ describe("Play Component", () => {
 
     let container = null;
     await act(() => {
-      const {container:temp} = setupRouter()
+      const { container: temp } = setupRouter();
       container = temp;
     });
 
@@ -115,7 +115,7 @@ describe("Play Component", () => {
 
     let container = null;
     await act(() => {
-      const {container:temp} = setupRouter()
+      const { container: temp } = setupRouter();
       container = temp;
     });
 
@@ -136,7 +136,7 @@ describe("Play Component", () => {
 
     let container = null;
     await act(() => {
-      const {container:temp} = setupRouter()
+      const { container: temp } = setupRouter();
       container = temp;
     });
 
@@ -238,12 +238,12 @@ describe("Play Component", () => {
   it("updates screen when incorrect guess", async () => {
     const json = vi.fn();
     json.mockResolvedValueOnce(mapInfo);
-    json.mockResolvedValueOnce({ result: "Incorrect guess"});
+    json.mockResolvedValueOnce({ result: "Incorrect guess" });
     global.fetch.mockResolvedValueOnce({ json });
     global.fetch.mockResolvedValueOnce({ json });
 
     await act(() => setupRouter());
-    const user = userEvent.setup()
+    const user = userEvent.setup();
 
     await user.click(screen.getByAltText("map"));
     await user.click(screen.getAllByRole("button")[0]);
@@ -254,12 +254,12 @@ describe("Play Component", () => {
   it("updates screen when correct guess", async () => {
     const json = vi.fn();
     json.mockResolvedValueOnce(mapInfo);
-    json.mockResolvedValueOnce({ result: "Correct guess"});
+    json.mockResolvedValueOnce({ result: "Correct guess" });
     global.fetch.mockResolvedValueOnce({ json });
     global.fetch.mockResolvedValueOnce({ json });
 
     await act(() => setupRouter());
-    const user = userEvent.setup()
+    const user = userEvent.setup();
 
     await user.click(screen.getByAltText("map"));
     await user.click(screen.getAllByRole("button")[0]);
@@ -270,16 +270,16 @@ describe("Play Component", () => {
   it("redirects to /name when game is over", async () => {
     const json = vi.fn();
     json.mockResolvedValueOnce(mapInfo);
-    json.mockResolvedValueOnce({ result: "Game over"});
+    json.mockResolvedValueOnce({ result: "Game over" });
     global.fetch.mockResolvedValueOnce({ json });
     global.fetch.mockResolvedValueOnce({ json });
 
     let router = null;
     await act(() => {
-      const {router:temp} = setupRouter();
-      router = temp; 
+      const { router: temp } = setupRouter();
+      router = temp;
     });
-    const user = userEvent.setup()
+    const user = userEvent.setup();
 
     await user.click(screen.getByAltText("map"));
     await user.click(screen.getAllByRole("button")[0]);

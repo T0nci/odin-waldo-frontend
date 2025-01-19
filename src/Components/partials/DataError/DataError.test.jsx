@@ -7,8 +7,7 @@ describe("DataError component", () => {
     const { container } = render(<DataError error="Test Error" />);
 
     expect(container).toMatchInlineSnapshot(
-      
-    `
+      `
       <div>
         <p
           class="_error_c84a52"
@@ -16,6 +15,7 @@ describe("DataError component", () => {
           Test Error
         </p>
       </div>
-    `);
+    `,
+    );
   });
 });

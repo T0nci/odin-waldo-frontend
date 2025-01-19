@@ -6,7 +6,7 @@ const DataError = ({ error }) => {
 };
 
 DataError.propTypes = {
-  error: PropTypes.string.isRequired
+  error: PropTypes.string.isRequired,
 };
 
 export default DataError;
