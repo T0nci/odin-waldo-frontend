@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import styles from "./Home.module.css";
 import MapList from "../partials/MapList/MapList";
 import Loading from "../partials/Loading/Loading";
+import DataError from "../partials/DataError/DataError";
 
 const Home = () => {
   const [maps, loading, error] = useData(
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <>
       {error ? (
-        <p className={styles.error}>{`${error}`}</p>
+        <DataError error={`${error}`} />
       ) : loading ? (
         <Loading />
       ) : (

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useParams } from "react-router";
 import { useMap } from "../../hooks";
-import styles from "./Play.module.css";
 import Loading from "../partials/Loading/Loading";
 import MapInfo from "../partials/MapInfo/MapInfo";
 import Map from "../partials/Map/Map";
+import DataError from "../partials/DataError/DataError";
 
 const Play = () => {
   const { mapId } = useParams();
@@ -16,7 +16,7 @@ const Play = () => {
   return (
     <>
       {error ? (
-        <p className={styles.error}>{`${error}`}</p>
+        <DataError error={`${error}`} />
       ) : loading ? (
         <Loading />
       ) : (

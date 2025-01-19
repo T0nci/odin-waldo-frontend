@@ -122,7 +122,7 @@ describe("Play Component", () => {
     expect(container).toMatchInlineSnapshot(`
       <div>
         <p
-          class="_error_21d8b6"
+          class="_error_c84a52"
         >
           Error: Test Error
         </p>

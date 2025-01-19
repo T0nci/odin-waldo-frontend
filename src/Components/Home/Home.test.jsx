@@ -127,7 +127,7 @@ describe("Home Component", () => {
     expect(container).toMatchInlineSnapshot(`
       <div>
         <p
-          class="_error_4b4bfe"
+          class="_error_c84a52"
         >
           Error: test error
         </p>
