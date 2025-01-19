@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useData = (url) => {
+export const useData = (url, credentials = false) => {
   const [state, setState] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +8,7 @@ export const useData = (url) => {
   useEffect(() => {
     let isActive = true;
 
-    fetch(url)
+    fetch(url, credentials ? {credentials: "include"} : {})
       .then((res) => res.json())
       .then((res) => {
         if (!isActive) return;
@@ -24,7 +24,7 @@ export const useData = (url) => {
     return () => {
       isActive = false;
     };
-  }, [url]);
+  }, [url, credentials]);
 
   return [state, loading, error];
 };
