@@ -30,7 +30,7 @@ const Name = () => {
       });
 
       const json = await response.json();
-      console.log(json);
+
       if (json.error) return setFetchError(json.error);
       else if (json.result) return navigate("/");
       else return setFetchError("Unknown response");
