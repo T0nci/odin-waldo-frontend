@@ -1,0 +1,34 @@
+.btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn,
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: #007bff;
+}
+
+.btn:hover {
+  background-color: #006bdd;
+}
+
+.btn:active {
+  background-color: #0060c7;
+}
+
+.button {
+  background-color: #dc3545;
+}
