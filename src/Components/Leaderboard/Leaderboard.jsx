@@ -6,7 +6,7 @@ import DataError from "../partials/DataError/DataError";
 import TableList from "../partials/TableList/TableList";
 
 const Leaderboard = () => {
-  const [data, loading, error] = useData(
+  const [maps, loading, error] = useData(
     import.meta.env.VITE_API_URL + "/leaderboard",
   );
   const [selectedMap, setSelectedMap] = useState(null);
@@ -20,7 +20,7 @@ const Leaderboard = () => {
       ) : (
         <>
           <div className={styles.btns}>
-            {data.maps.map((map) => (
+            {maps.map((map) => (
               <button
                 key={map.id}
                 onClick={() => setSelectedMap(map.name)}
@@ -34,13 +34,9 @@ const Leaderboard = () => {
           </div>
           {selectedMap && (
             <TableList
-              users={data.leaderboard
-                .filter((user) => user.mapName === selectedMap)
-                .sort(
-                  (a, b) =>
-                    Number(a.totalTimeInSeconds) - Number(b.totalTimeInSeconds),
-                )
-                .map((user, index) => ({ ...user, num: index + 1 }))}
+              users={
+                maps.find((map) => map.name === selectedMap).leaderboard || []
+              }
               map={selectedMap}
             />
           )}
