@@ -1,8 +1,12 @@
-# React + Vite
+# Where's Waldo Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the Front-End for the [Waldo API](https://github.com/T0nci/odin-waldo-api).
 
-Currently, two official plugins are available:
+[Live Preview](https://odin-waldo-frontend.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
+
+- Selecting maps ![selecting maps](./readme_assets/image-1.png)
+- Playing a game ![playing the game](./readme_assets/image-2.png)
+- Seeing your score and entering a name ![user's final score and name entering](./readme_assets/image-3.png)
+- Accessing the leaderboard ![accessing the leaderboard](./readme_assets/image-4.png)
