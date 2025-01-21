@@ -8,22 +8,26 @@ const Map = ({ url, characters, guessCharacter, setGuessResult }) => {
     active: false,
     coordinates: [],
     left: false,
+    bottom: false,
   });
 
   const turnOffDropdown = () => {
-    setDropdown({ active: false, coordinates: [], left: false });
+    setDropdown({ active: false, coordinates: [], left: false, bottom: false });
   };
   const handleClick = (e) => {
     if (dropdown.active) turnOffDropdown();
     else {
       let left = false;
+      let bottom = false;
       if (e.clientX * 2 > document.body.clientWidth) left = true;
+      if (e.clientY * 2 > document.body.clientHeight) bottom = true;
 
       setDropdown({
         active: true,
-        // these coordinates are relative to the element being clicked on, and since we are loading the full image these are accurate
+        // these coordinates are relative to the element being clicked on, and since we are loading the full image without distortion these are accurate
         coordinates: [e.nativeEvent.offsetX, e.nativeEvent.offsetY],
         left,
+        bottom,
       });
     }
   };
@@ -37,7 +41,7 @@ const Map = ({ url, characters, guessCharacter, setGuessResult }) => {
             style={{
               top: dropdown.coordinates[1],
               left: dropdown.coordinates[0],
-              transform: dropdown.left ? "translateX(-100%)" : "",
+              transform: `translate(${dropdown.left ? "-100%" : "0"}, ${dropdown.bottom ? "-100%" : "0"})`,
             }}
             coordinates={dropdown.coordinates}
             characters={characters}
