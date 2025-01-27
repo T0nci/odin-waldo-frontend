@@ -1,6 +1,6 @@
-# Where's Waldo Front-End
+# Hidden in Plain Sight Front-End
 
-This is the Front-End for the [Waldo API](https://github.com/T0nci/odin-waldo-api).
+This is the Front-End for the [Hidden in Plain Sight API](https://github.com/T0nci/odin-waldo-api).
 
 [Live Preview](https://odin-waldo-frontend.vercel.app/)
 
