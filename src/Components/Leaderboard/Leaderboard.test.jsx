@@ -6,38 +6,38 @@ import { RouterProvider, createMemoryRouter } from "react-router";
 import Leaderboard from "./Leaderboard";
 
 global.fetch = vi.fn();
-const fetchReturn = {
-  leaderboard: [
-    {
-      id: 1,
-      username: "Test User 1",
-      mapName: "Test Map 1",
-      totalTimeInSeconds: "10.001",
-    },
-    {
-      id: 2,
-      username: "Test User 2",
-      mapName: "Test Map 2",
-      totalTimeInSeconds: "12.345",
-    },
-    {
-      id: 3,
-      username: "Test User 3",
-      mapName: "Test Map 1",
-      totalTimeInSeconds: "7.556",
-    },
-  ],
-  maps: [
-    {
-      id: 1,
-      name: "Test Map 1",
-    },
-    {
-      id: 2,
-      name: "Test Map 2",
-    },
-  ],
-};
+const fetchReturn = [
+  {
+    id: 1,
+    name: "Test Map 1",
+    leaderboard: [
+      {
+        id: 4,
+        username: "Thor",
+        totalTimeInSeconds: "99.999",
+        num: 1,
+      },
+      {
+        id: 1,
+        username: "Blah",
+        totalTimeInSeconds: "299.999",
+        num: 2,
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Test Map 2",
+    leaderboard: [
+      {
+        id: 3,
+        username: "Odin",
+        totalTimeInSeconds: "100.001",
+        num: 1,
+      },
+    ],
+  },
+];
 const json = () => Promise.resolve(fetchReturn);
 global.fetch.mockResolvedValue({ json });
 
@@ -151,12 +151,12 @@ describe("Leaderboard Component", () => {
               <td
                 class="_td_d61b1a"
               >
-                Test User 3
+                Thor
               </td>
               <td
                 class="_td_d61b1a"
               >
-                7.556
+                99.999
                 s
               </td>
             </tr>
@@ -171,12 +171,12 @@ describe("Leaderboard Component", () => {
               <td
                 class="_td_d61b1a"
               >
-                Test User 1
+                Blah
               </td>
               <td
                 class="_td_d61b1a"
               >
-                10.001
+                299.999
                 s
               </td>
             </tr>
