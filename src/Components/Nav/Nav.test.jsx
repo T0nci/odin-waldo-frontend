@@ -43,11 +43,11 @@ describe("Nav component", () => {
             >
               <li>
                 <a
-                  class="_nav-link_5b014f"
+                  class="_nav-link_5b014f _heading_5b014f"
                   data-discover="true"
                   href="/"
                 >
-                  Play
+                  Hidden in Plain Sight
                 </a>
               </li>
               <li>
@@ -96,7 +96,9 @@ describe("Nav component", () => {
     await user.click(screen.getByRole("link", { name: "Leaderboard" }));
     expect(router.state.location.pathname).toBe("/leaderboard");
 
-    await user.click(screen.getByRole("link", { name: "Play" }));
+    await user.click(
+      screen.getByRole("link", { name: "Hidden in Plain Sight" }),
+    );
     expect(router.state.location.pathname).toBe("/");
   });
 });

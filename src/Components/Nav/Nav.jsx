@@ -8,8 +8,8 @@ const Nav = () => {
       <nav className="floating">
         <ul className={"floating-child " + styles.nav}>
           <li>
-            <Link to="/" className={styles["nav-link"]}>
-              Play
+            <Link to="/" className={styles["nav-link"] + " " + styles.heading}>
+              Hidden in Plain Sight
             </Link>
           </li>
           <li>
