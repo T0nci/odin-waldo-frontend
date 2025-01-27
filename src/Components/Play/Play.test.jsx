@@ -195,7 +195,7 @@ describe("Play Component", () => {
           />
           <ul
             class="_dropdown_943d41"
-            style="top: 0px; left: 0px;"
+            style="top: 0px; left: 0px; transform: translate(0, 0);"
           >
             <li>
               <button
