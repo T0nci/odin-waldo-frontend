@@ -10,11 +10,13 @@ const mapInfo = {
       id: 1,
       name: "Test Character 1",
       url: "Test URL 3",
+      guessed: true,
     },
     {
       id: 2,
       name: "Test Character 2",
       url: "Test URL 4",
+      guessed: false,
     },
   ],
 };
@@ -48,7 +50,9 @@ describe("MapInfo Component", () => {
               <p
                 class="_name_59a237"
               >
-                Test Character 1
+                <s>
+                  Test Character 1
+                </s>
               </p>
             </li>
             <li
@@ -99,7 +103,9 @@ describe("MapInfo Component", () => {
               <p
                 class="_name_59a237"
               >
-                Test Character 1
+                <s>
+                  Test Character 1
+                </s>
               </p>
             </li>
             <li

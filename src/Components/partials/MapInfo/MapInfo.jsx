@@ -9,7 +9,9 @@ const MapInfo = ({ mapInfo, guessResult }) => {
         {mapInfo.characters.map((character) => (
           <li key={character.id} className={styles.character}>
             <img src={character.url} alt="" className={styles.image} />
-            <p className={styles.name}>{character.name}</p>
+            <p className={styles.name}>
+              {character.guessed ? <s>{character.name}</s> : character.name}
+            </p>
           </li>
         ))}
       </ul>
