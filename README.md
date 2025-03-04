@@ -48,6 +48,6 @@ o
 
 ## License
 
-[MIT](LICENSE.txt)
+[MIT](LICENSE)
 
 [(back to top)](#hidden-in-plain-sight-front-end)
